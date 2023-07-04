@@ -1,0 +1,4 @@
+com\runner\Parallel.class
+examples\ExamplesTest.class
+com\runner\Sequence.class
+examples\users\UsersRunner.class

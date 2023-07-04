@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"pool-1-thread-1","id":1},{"content":"pool-1-thread-2","id":2},{"content":"pool-1-thread-3","id":3},{"content":"pool-1-thread-4","id":4},{"content":"pool-1-thread-5","id":5}];
+var items = [{"id":1,"group":1,"content":"requests1\/assertions[1:6]","start":1687425728234,"end":1687425729462,"title":"requests1\/assertions[1:6] 14:52:08.234-14:52:09.462 Assertions"},{"id":2,"group":2,"content":"requests1\/config[1:6]","start":1687425728234,"end":1687425729842,"title":"requests1\/config[1:6] 14:52:08.234-14:52:09.842 Post with config.js file"},{"id":3,"group":3,"content":"requests1\/datadriven[1.1:14]","start":1687425728234,"end":1687425729907,"title":"requests1\/datadriven[1.1:14] 14:52:08.234-14:52:09.907 Data driven request"},{"id":4,"group":4,"content":"requests1\/datadriven[1.2:15]","start":1687425728234,"end":1687425729842,"title":"requests1\/datadriven[1.2:15] 14:52:08.234-14:52:09.842 Data driven request"},{"id":5,"group":5,"content":"requests1\/delete[1:6]","start":1687425728234,"end":1687425729747,"title":"requests1\/delete[1:6] 14:52:08.234-14:52:09.747 Delete request"},{"id":6,"group":1,"content":"requests1\/delete[2:11]","start":1687425729468,"end":1687425730437,"title":"requests1\/delete[2:11] 14:52:09.468-14:52:10.437 delete request having dynamic id"},{"id":7,"group":5,"content":"requests1\/get[1:6]","start":1687425729752,"end":1687425729936,"title":"requests1\/get[1:6] 14:52:09.752-14:52:09.936 Assertions"},{"id":8,"group":4,"content":"requests1\/post[1:6]","start":1687425729849,"end":1687425730417,"title":"requests1\/post[1:6] 14:52:09.849-14:52:10.417 Delete request having dynamic id"},{"id":9,"group":2,"content":"requests1\/post1[1:6]","start":1687425729850,"end":1687425730472,"title":"requests1\/post1[1:6] 14:52:09.850-14:52:10.472 update request"},{"id":10,"group":3,"content":"requests1\/put[1:6]","start":1687425729913,"end":1687425730500,"title":"requests1\/put[1:6] 14:52:09.913-14:52:10.500 update request"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
